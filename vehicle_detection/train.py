@@ -27,7 +27,7 @@ parser.add_argument("--model_name", help="Model Name (Ex: faster_rcnn_R_50_FPN_3
                     type=str)
 
 parser.add_argument("--root_folder", help="root folder with radiate dataset",
-                    default='../data/radiate/',
+                    default='/data/datasets/radiate',
                     type=str)
 
 parser.add_argument("--max_iter", help="Maximum number of iterations",
@@ -49,6 +49,7 @@ root_dir = args.root_folder
 resume = args.resume
 dataset_mode = args.dataset_mode
 max_iter = args.max_iter
+
 
 
 def train(model_name, root_dir, dataset_mode, max_iter):
