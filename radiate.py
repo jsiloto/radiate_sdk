@@ -439,7 +439,7 @@ class Sequence:
             for ii in range(len(bbox_3d)):
                 color = self.colors[obj['class_name']]
                 vis_im = cv2.line(vis_im, (bbox_3d[ii - 1][0], bbox_3d[ii - 1][1]),
-                                  (bbox_3d[ii][0], bbox_3d[ii][1]), (np.array(color) * 255).astype(np.int).tolist(), 1)
+                                  (bbox_3d[ii][0], bbox_3d[ii][1]), (np.array(color) * 255).astype(int).tolist(), 1)
 
         return vis_im
 
@@ -468,7 +468,7 @@ class Sequence:
                 # hei = bb[3] - bb[1]
                 bb[0] += wid*(1.0 - pc_size)
                 bb[2] -= wid*(1.0 - pc_size)
-                bb = bb.astype(np.int)
+                bb = bb.astype(int)
                 vis_im = cv2.rectangle(
                     vis_im, (bb[0], bb[1]), (bb[2], bb[3]), (np.array(color) * 255))
 
@@ -818,8 +818,8 @@ class Sequence:
         cx = cameraMatrix[0, 2]
         cy = cameraMatrix[1, 2]
 
-        xIm = np.round((fx * points[:, 0] / points[:, 2]) + cx).astype(np.int)
-        yIm = np.round((fy * points[:, 1] / points[:, 2]) + cy).astype(np.int)
+        xIm = np.round((fx * points[:, 0] / points[:, 2]) + cx).astype(int)
+        yIm = np.round((fy * points[:, 1] / points[:, 2]) + cy).astype(int)
 
         proj_bbox_3d = []
         for ii in range(1, xIm.shape[0]):

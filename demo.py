@@ -3,8 +3,8 @@ import numpy as np
 import os
 
 # path to the sequence
-root_path = 'data/radiate/'
-sequence_name = 'tiny_foggy'
+root_path = '/data/datasets/radiate/'
+sequence_name = 'city_1_3'
 
 # time (s) to retrieve next frame
 dt = 0.25

@@ -41,7 +41,3 @@ RUN mkdir /home/$USER
 RUN chmod -R 777 /home/$USER
 
 CMD /bin/bash
-
-
-#COPY requirements.txt ./requirements.txt
-#RUN pip install -r requirements.txt
