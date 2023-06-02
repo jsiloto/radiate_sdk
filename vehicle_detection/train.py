@@ -71,6 +71,9 @@ def train(model_name, root_dir, dataset_mode, max_iter):
         elif meta["set"] == "test":
             folders_test.append(curr_dir)
 
+    print(folders_test)
+    print(folders_train)
+
     def gen_boundingbox(bbox, angle):
         theta = np.deg2rad(-angle)
         R = np.array([[np.cos(theta), -np.sin(theta)],
