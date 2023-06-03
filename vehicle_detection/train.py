@@ -170,7 +170,7 @@ def train(model_name, root_dir, dataset_mode, max_iter):
 
     DatasetCatalog.register(dataset_test_name,
                             lambda: get_radar_dicts(folders_test))
-    MetadataCatalog.get(dataset_test_name).set(thing_classes=["vehicle"])
+    MetadataCatalog.get(dataset_test_name).set(thing_classes=["vehicle"], evaluator_type='coco')
 
     cfg_file = os.path.join('test', 'config', model_name + '.yaml')
     cfg = get_cfg()
